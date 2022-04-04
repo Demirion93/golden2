@@ -13,7 +13,7 @@
     "test:html": "html-validate *.html",
     "build": "npm-run-all build:* test",
     "build:clean": "mkdirp dist && rm -r dist && mkdirp dist",
-    "build:copy": "copyfiles -a -u 1 -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"css/**/*\" \"images/**/*\" \"sass/**/*\" \"vendor/**/*\" \"index/**/*\" dist",
+    "build:copy": "copyfiles -a -u 1 -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"css/**/*\" \"images/**/*\" \"sass/**/*\" \"vendor/**/*\" \"cp index.html/**/*\"  dist && cp index.html dist/index.html",
     "build:sass": "sass sass:css",
     "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
     "build-dev": "npm-run-all build-dev:sass build:autoprefixer",
